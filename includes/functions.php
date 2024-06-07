@@ -443,17 +443,25 @@ function ap_form_allowed_tags() {
 		'strong'     => array(
 			'style' => $allowed_style,
 		),
+		 
 		'pre'        => array(),
-		'code'       => array(),
-		'blockquote' => array(),
-		'img'        => array(
-			'src'   => true,
-			'style' => $allowed_style,
-		),
-		'ul'         => array(),
-		'ol'         => array(),
-		'li'         => array(),
-		'del'        => array(),
+'code'       => array(),
+'blockquote' => array(),
+'img'        => array(
+    'src'   => true,
+    'style' => $allowed_style,
+),
+'ul'         => array(),
+'ol'         => array(),
+'li'         => array(),
+'del'        => array(),
+'table'      => array(),
+'thead'      => array(),
+'tbody'      => array(),
+'tr'         => array(),
+'th'         => array(),
+'td'         => array(),
+
 	);
 
 	/**
