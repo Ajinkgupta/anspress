@@ -208,10 +208,7 @@ class BuddyPress extends \AnsPress\Singleton {
 		anspress()->questions = new \Question_Query( $args );
 
 		if ( false === $only_posts ) {
-			echo '<div class="ap-bp-head clearfix">';
-			echo '<h1>' . esc_attr__( 'Questions', 'anspress-question-answer' ) . '</h1>';
-			ap_list_filters();
-			echo '</div>';
+			
 			echo '<div id="ap-bp-questions">';
 		}
 
@@ -224,7 +221,12 @@ class BuddyPress extends \AnsPress\Singleton {
 		}
 
 		if ( false === $only_posts ) {
-			echo '</div>';
+			echo '<div class="error-404 not-found text-center" style="border: 1px solid #000;border-radius:10px; align: center; padding: 20px;">
+    <h3 style="font-weight: bold;"> This user didnt ask any questions</h3>
+    <center><img src="https://cdn.jsdelivr.net/gh/Ajinkgupta/anspress@master/assets/noquestion.png" alt="Image description" style="display: block; width:80%;"></center>
+    <a class="button" href="../../../../ask">Ask a Question</a>
+</div>
+</div>';
 		}
 
 		if ( anspress()->questions->max_num_pages > 1 && false === $only_posts ) {
@@ -274,10 +276,7 @@ class BuddyPress extends \AnsPress\Singleton {
 		anspress()->answers = $answers;
 
 		if ( false === $only_posts ) {
-			echo '<div class="ap-bp-head clearfix">';
-			echo '<h1>' . esc_attr__( 'Answers', 'anspress-question-answer' ) . '</h1>';
-			ap_answers_tab( get_the_permalink() );
-			echo '</div>';
+			
 			echo '<div id="ap-bp-answers">';
 		}
 
@@ -290,7 +289,11 @@ class BuddyPress extends \AnsPress\Singleton {
 		}
 
 		if ( false === $only_posts ) {
-			echo '</div>';
+			echo '<div class="error-404 not-found text-center" style="border: 1px solid #000;border-radius:10px; align: center; padding: 20px;">
+    <h3 style="font-weight: bold;"> This user didnt answer any questions</h3>
+    <center><img src="https://cdn.jsdelivr.net/gh/Ajinkgupta/anspress@master/assets/noans.png" alt="Image description" style="display: block; width:80%;"></center>
+    <a class="button" href="../../../../questions/?order_by=unanswered">Answer a Question</a>
+</div></div>';
 		}
 
 		if ( $answers->max_num_pages > 1 && false === $only_posts ) {
